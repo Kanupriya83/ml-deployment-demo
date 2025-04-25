@@ -36,42 +36,57 @@ This repository demonstrates best practices in containerization, reproducibility
 ```bash
 git clone https://github.com/your-username/ml-deployment-demo.git
 cd ml-deployment-demo
+```
+---
 
 ### 2. Set up a Python environment
-Using conda:
+# Using conda:
+```bash
 conda create -n deploy-env python=3.8 -y
 conda activate deploy-env
 pip install -r requirements.txt
+```
 
-or using virtualenv:
+# or using virtualenv:
+``` bash
 python3 -m venv venv
 source venv/bin/activate
 pip install -r requirements.txt
+```
 
 ### 3. Run the Inference Script
+``` bash
 python app/infer.py
+```
 
 ### 4. 4. Run Tests
+``` bash
 pytest tests/
+```
 
 ### Build & Run with Docker
 ## Build the Docker Image
+``` bash
 docker build -t ml-deployment-demo .
+```
 
 ### Run the Container
+``` bash
 docker run --rm ml-deployment-demo
-
+```
 ### if using GPU
+``` bash
 docker run --gpus all --rm ml-deployment-demo
+```
 
-CI/CD with GitHub Actions
+### CI/CD with GitHub Actions
 The CI/CD pipeline is defined in .github/workflows/deploy.yml. It will:
-
-Run pytest on every push and pull_request
-
-Build the Docker image
+- Run pytest on every push and pull_request
+- Build the Docker image
+  
+``` bash
 git add .
 git commit -m "Trigger CI/CD"
 git push
-
+```
 
