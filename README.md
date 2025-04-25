@@ -40,14 +40,14 @@ cd ml-deployment-demo
 ---
 
 ### 2. Set up a Python environment
-# Using conda:
+#### Using conda:
 ```bash
 conda create -n deploy-env python=3.8 -y
 conda activate deploy-env
 pip install -r requirements.txt
 ```
 
-# or using virtualenv:
+#### or using virtualenv:
 ``` bash
 python3 -m venv venv
 source venv/bin/activate
@@ -59,13 +59,13 @@ pip install -r requirements.txt
 python app/infer.py
 ```
 
-### 4. 4. Run Tests
+### 4. Run Tests
 ``` bash
 pytest tests/
 ```
 
 ### Build & Run with Docker
-## Build the Docker Image
+#### Build the Docker Image
 ``` bash
 docker build -t ml-deployment-demo .
 ```
